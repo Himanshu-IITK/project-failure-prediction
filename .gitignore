@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env/
+
+# Data & Models (keep lightweight sample data if needed, ignore large binaries)
+data/raw/*.csv
+data/processed/*.csv
+models/*.pkl
+models/*.joblib
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env/
+
+# Data & Models (keep lightweight sample data if needed, ignore large binaries)
+data/raw/*.csv
+data/processed/*.csv
+models/*.pkl
+models/*.joblib
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
