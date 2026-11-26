@@ -1,6 +1,40 @@
+from sklearn.base import BaseEstimator, TransformerMixin, OneToOneFeatureMixin
 import numpy as np
 import pandas as pd
 
+class IQROutlierCapper(OneToOneFeatureMixin, BaseEstimator, TransformerMixin):
+    """
+    Caps numerical outliers using Interquartile Range (IQR) bounds.
+    """
+
+    def __init__(self, factor: float = 1.5):
+        self.factor = factor
+
+    def fit(self, X, y=None):
+        X_arr = np.asarray(X, dtype=float)
+
+        # Store the number of input features (IMPORTANT FIX)
+        self.n_features_in_ = X_arr.shape[1]
+
+        # Calculate IQR bounds
+        q1 = np.percentile(X_arr, 25, axis=0)
+        q3 = np.percentile(X_arr, 75, axis=0)
+
+        iqr = q3 - q1
+
+        self.lower_bounds_ = q1 - self.factor * iqr
+        self.upper_bounds_ = q3 + self.factor * iqr
+
+        return self
+
+    def transform(self, X):
+        X_arr = np.asarray(X, dtype=float)
+
+        return np.clip(
+            X_arr,
+            self.lower_bounds_,
+            self.upper_bounds_
+        )
 
 def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     """
