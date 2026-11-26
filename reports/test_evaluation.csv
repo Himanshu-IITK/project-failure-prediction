@@ -1,0 +1,6 @@
+model,test_roc_auc,test_f1,test_recall,test_precision,test_accuracy
+random_forest,0.819,0.5234,0.5185,0.5283,0.796
+logistic_regression,0.8182,0.5684,0.75,0.4576,0.754
+xgboost,0.7944,0.4645,0.4537,0.4757,0.774
+svm,0.7482,0.4819,0.5556,0.4255,0.742
+decision_tree,0.7411,0.5247,0.6389,0.4452,0.75
