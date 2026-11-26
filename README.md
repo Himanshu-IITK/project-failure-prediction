@@ -1,5 +1,7 @@
 # Project Failure Prediction Using Machine Learning
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://project-failure-predictor.streamlit.app/)
+
 An end-to-end Machine Learning decision-support system that predicts project failure early in the execution lifecycle by combining **Project Management Earned Value & Risk metrics** with ensemble classification models and an interactive **Streamlit** dashboard.
 
 Developed as a production-grade implementation of the **MBA666 (Project Management)** framework at **IIT Kanpur**.
